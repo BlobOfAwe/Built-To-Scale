@@ -12,7 +12,10 @@ public class PlayerController : MonoBehaviour
     private Vector2 originTransform;
     [SerializeField] float timer;
     RaycastHit2D targetHit;
-    
+
+
+    public float CameraShakeTime;
+    public float MaxCameraTime;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,9 +25,11 @@ public class PlayerController : MonoBehaviour
     void Update()
     {        
         // If the player is already moving, continue moving
-        if (moving) {
+        if (moving)
+        {
             timer += Time.deltaTime;
-            transform.position = Vector2.Lerp(originTransform, targetHit.point, timer/moveDuration); Debug.Log("Moving"); }
+            transform.position = Vector2.Lerp(originTransform, targetHit.point, timer/moveDuration);  
+        }
 
         // If the player is not moving and has input on any axis, move.
         else if (Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0)
@@ -32,7 +37,8 @@ public class PlayerController : MonoBehaviour
             Move(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         }
 
-        Debug.Log(moving + " " + transform.position);
+        
+       
 
     }
 
@@ -43,7 +49,7 @@ public class PlayerController : MonoBehaviour
         {
             RecenterPosition();
             timer = 0;
-            moving = false; Debug.Log("Arrived");
+            moving = false; 
         }
     }
 
@@ -59,9 +65,20 @@ public class PlayerController : MonoBehaviour
         moving = true; // Declare the player is moving
         Vector2 pointTo;
 
-        if (hInput != 0) { pointTo = new Vector2(hInput, 0); } // If there is horizontal input, fire the raycast left or right
-        else if (vInput != 0) { pointTo = new Vector2(0, vInput); } // If there is no horizontal input, but there is vertical input, fire raycast up or down
-        else { Debug.LogError("Tried to move with no direction!"); return; } // If there is somehow no input, throw an error and return void.
+        if (hInput != 0)// If there is horizontal input, fire the raycast left or right
+        { 
+            pointTo = new Vector2(hInput, 0); 
+        
+        } 
+        else if (vInput != 0)// If there is no horizontal input, but there is vertical input, fire raycast up or down
+        {
+            pointTo = new Vector2(0, vInput);
+        }
+        else // If there is somehow no input, throw an error and return void.
+        {
+            
+            return; 
+        } 
 
         RaycastHit2D target = Physics2D.CircleCast(transform.position, 0.5f, pointTo, castRange, wallMask); // Fire the circlecast to detect a wall
         targetHit = target; // Record the raycast hit for the Gizmos
@@ -79,5 +96,23 @@ public class PlayerController : MonoBehaviour
         Gizmos.DrawLine(transform.position, targetHit.point);
     }
 
+    IEnumerator CameraShake()
+    {
+        Vector3 OrginalCamPos = Camera.main.transform.position;
+        yield return new WaitForSeconds(0.5f);
+        while (CameraShakeTime > 0)
+        {
+            Camera.main.transform.position = new Vector3(Random.Range(1, 5), Random.Range(1, 5), -10);
+        }
+    }
+   
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.transform.tag == "Wall")
+        {
+            StartCoroutine(CameraShake());
+            CameraShakeTime -= Time.deltaTime;
+        }
+    }
 
 }
