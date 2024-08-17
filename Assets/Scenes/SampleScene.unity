@@ -2365,7 +2365,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad85d9e9290ebb941a5fe3fa44f386d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EndBig: 1
+  EndBig: 0
   EndSmall: 0
   BigScale: {x: 1, y: 1, z: 1}
   SmallScale: {x: 0, y: 0, z: 0}

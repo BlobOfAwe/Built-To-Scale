@@ -6,8 +6,9 @@ public class Goal : MonoBehaviour
 {
     public bool EndBig;
     public bool EndSmall;
-    public Vector3 BigScale;
-    public Vector3 SmallScale;
+    public Vector3 BigScale; // set this to the scale that the player will transform to when hitting the big coins
+    public Vector3 SmallScale; // set this to the scale that the player will transform to when hitting the small coins
+    // make sure this obj has a collider that is trigger & has a collider with frzen constraints
     void Start()
     {
         
@@ -33,6 +34,7 @@ public class Goal : MonoBehaviour
             if (EndSmall && collision.transform.lossyScale == SmallScale)
             {
                 Debug.Log("Won Small");
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             }
         }
     }
