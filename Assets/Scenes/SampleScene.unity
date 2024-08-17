@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 145241721}
   m_Layer: 3
   m_Name: Tilemap
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2683,8 +2683,31 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   timer: 0
-  CameraShakeTime: 0
-  MaxCameraTime: 0
+  CameraShakeTime: 0.25
+  CameraShakeCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0.0113661215
+      outSlope: 0.0113661215
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.97496945
+      value: 0.011081621
+      inSlope: 0.0113661215
+      outSlope: 0.0113661215
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!212 &1501900145
 SpriteRenderer:
   m_ObjectHideFlags: 0
