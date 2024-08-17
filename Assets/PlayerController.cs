@@ -14,8 +14,10 @@ public class PlayerController : MonoBehaviour
     RaycastHit2D targetHit;
 
 
+    private Collider2D lastPushTile;
     public float CameraShakeTime;
     public float MaxCameraTime;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -49,7 +51,18 @@ public class PlayerController : MonoBehaviour
         {
             RecenterPosition();
             timer = 0;
-            moving = false; 
+            
+            moving = false; Debug.Log("Arrived");
+
+            try
+            {
+                if (targetHit.collider.CompareTag("PushTile"))
+                {
+                    Move(lastPushTile.transform.right.x, lastPushTile.transform.right.y);
+
+                }
+            }
+            catch { }
         }
     }
 
@@ -65,22 +78,38 @@ public class PlayerController : MonoBehaviour
         moving = true; // Declare the player is moving
         Vector2 pointTo;
 
-        if (hInput != 0)// If there is horizontal input, fire the raycast left or right
-        { 
-            pointTo = new Vector2(hInput, 0); 
-        
-        } 
-        else if (vInput != 0)// If there is no horizontal input, but there is vertical input, fire raycast up or down
-        {
-            pointTo = new Vector2(0, vInput);
-        }
-        else // If there is somehow no input, throw an error and return void.
-        {
-            
-            return; 
-        } 
 
-        RaycastHit2D target = Physics2D.CircleCast(transform.position, 0.5f, pointTo, castRange, wallMask); // Fire the circlecast to detect a wall
+        if (-0.01 >= hInput || 0.01 <= hInput) { pointTo = new Vector2(hInput, 0); } // If there is horizontal input, fire the raycast left or right
+        else if (-0.01 >= vInput || 0.01 <= vInput) { pointTo = new Vector2(0, vInput); } // If there is no horizontal input, but there is vertical input, fire raycast up or down
+        else { Debug.LogError("Tried to move with no direction!"); return; } // If there is somehow no input, throw an error and return void.
+
+
+        RaycastHit2D target = Physics2D.CircleCast(transform.position, 0.35f, pointTo, castRange, wallMask); // Fire the circlecast to detect a wall
+        try { lastPushTile.enabled = true; } catch { } // Renable the collider of the last push tile contacted.
+        
+        // If the target is a push tile, disable the tile's collider. This prevents the player from getting stuck on it.
+        if (target.collider.CompareTag("PushTile"))
+        {
+            lastPushTile = target.collider;
+            lastPushTile.enabled = false;
+        }
+
+        // If the target is a OneWay wall, check if the player is on the correct side of the wall
+        // Check this by seeing if the side of the tile with the collider is farther away than the tile's center. If it is, disable the collider and redo the circlecast
+        if (target.collider.CompareTag("OneWay") && Vector3.Distance(transform.position, toVector3(target.point)) > Vector3.Distance(transform.position, target.transform.position)) 
+        {
+            Collider2D oneWayCollider = target.collider;
+            oneWayCollider.enabled = false;
+            target = Physics2D.CircleCast(transform.position, 0.35f, pointTo, castRange, wallMask); // Fire the circlecast to detect a wall
+            oneWayCollider.enabled = true;
+        }
+        
+        // If the raycast hit a wall next to the player, return void
+        else if (
+            target.point.x < transform.position.x + 1 && target.point.x > transform.position.x - 1 &&
+            target.point.y < transform.position.y + 1 && target.point.y > transform.position.y - 1 )
+        { moving = false; return; }
+        
         targetHit = target; // Record the raycast hit for the Gizmos
         originTransform = transform.position; // log the player's starting position as it moves
     }
@@ -92,7 +121,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Gizmos.DrawWireSphere(targetHit.point, 0.5f);
+        Gizmos.DrawWireSphere(targetHit.point, 0.35f);
         Gizmos.DrawLine(transform.position, targetHit.point);
     }
 
