@@ -64,6 +64,13 @@ public class PlayerController : MonoBehaviour
         else { Debug.LogError("Tried to move with no direction!"); return; } // If there is somehow no input, throw an error and return void.
 
         RaycastHit2D target = Physics2D.CircleCast(transform.position, 0.5f, pointTo, castRange, wallMask); // Fire the circlecast to detect a wall
+        
+        // If the raycast hit a target less than 1 unit away, return void
+        if (
+            target.point.x < transform.position.x + 1 && target.point.x > transform.position.x - 1 &&
+            target.point.y < transform.position.y + 1 && target.point.y > transform.position.y - 1 )
+        { moving = false; return; }
+        
         targetHit = target; // Record the raycast hit for the Gizmos
         originTransform = transform.position; // log the player's starting position as it moves
     }
