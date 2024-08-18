@@ -7,7 +7,6 @@ TagManager:
   - PushTile
   - OneWay
   - Wall
-
   layers:
   - Default
   - TransparentFX

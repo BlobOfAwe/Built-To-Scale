@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public bool moving;
+    public int size;
     [SerializeField] float moveDuration = 0.5f;
     [SerializeField] float castRange = 300;
     [SerializeField] LayerMask wallMask;
@@ -15,22 +16,27 @@ public class PlayerController : MonoBehaviour
 
 
     private Collider2D lastPushTile;
+    private Animator animator;
     public float CameraShakeTime;
     public float MaxCameraTime;
 
     // Start is called before the first frame update
     void Start()
     {
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
-    {        
+    {
+        animator.SetBool("moving", moving);
+        animator.SetInteger("size", size);
+
         // If the player is already moving, continue moving
         if (moving)
         {
             timer += Time.deltaTime;
-            transform.position = Vector2.Lerp(originTransform, targetHit.point, timer/moveDuration);  
+            transform.position = Vector2.Lerp(originTransform, targetHit.point, timer / moveDuration);
         }
 
         // If the player is not moving and has input on any axis, move.
@@ -38,10 +44,6 @@ public class PlayerController : MonoBehaviour
         {
             Move(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         }
-
-        
-       
-
     }
 
     private void LateUpdate()
@@ -52,10 +54,12 @@ public class PlayerController : MonoBehaviour
             RecenterPosition();
             timer = 0;
             
-            moving = false; Debug.Log("Arrived");
+            moving = false;
+            transform.eulerAngles = Vector3.zero;
 
             try
             {
+                // If the currently registered target is a pushtile, force the player to move
                 if (targetHit.collider.CompareTag("PushTile"))
                 {
                     Move(lastPushTile.transform.right.x, lastPushTile.transform.right.y);
@@ -79,13 +83,15 @@ public class PlayerController : MonoBehaviour
         Vector2 pointTo;
 
 
-        if (-0.01 >= hInput || 0.01 <= hInput) { pointTo = new Vector2(hInput, 0); } // If there is horizontal input, fire the raycast left or right
-        else if (-0.01 >= vInput || 0.01 <= vInput) { pointTo = new Vector2(0, vInput); } // If there is no horizontal input, but there is vertical input, fire raycast up or down
+        if (-0.01 >= hInput || 0.01 <= hInput) { pointTo = new Vector2(hInput, 0).normalized; } // If there is horizontal input, fire the raycast left or right
+        else if (-0.01 >= vInput || 0.01 <= vInput) { pointTo = new Vector2(0, vInput).normalized; } // If there is no horizontal input, but there is vertical input, fire raycast up or down
         else { Debug.LogError("Tried to move with no direction!"); return; } // If there is somehow no input, throw an error and return void.
 
 
         RaycastHit2D target = Physics2D.CircleCast(transform.position, 0.35f, pointTo, castRange, wallMask); // Fire the circlecast to detect a wall
         try { lastPushTile.enabled = true; } catch { } // Renable the collider of the last push tile contacted.
+        
+        
         
         // If the target is a push tile, disable the tile's collider. This prevents the player from getting stuck on it.
         if (target.collider.CompareTag("PushTile"))
@@ -112,6 +118,11 @@ public class PlayerController : MonoBehaviour
         
         targetHit = target; // Record the raycast hit for the Gizmos
         originTransform = transform.position; // log the player's starting position as it moves
+
+        if (pointTo.y != 0) { transform.eulerAngles = new Vector3(0, 0, Mathf.Asin(pointTo.y) * Mathf.Rad2Deg - 90); }
+        else if (pointTo.x != 0) { transform.eulerAngles = new Vector3(0, 0, Mathf.Acos(pointTo.x) * Mathf.Rad2Deg - 90); }
+        else { Debug.LogError("ERROR: Invalid target for rotation. Vector: (" + pointTo.x + ", " + pointTo.y + ")"); }
+        
     }
 
 
