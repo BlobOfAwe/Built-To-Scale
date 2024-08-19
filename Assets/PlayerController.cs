@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
 
     private Collider2D lastPushTile;
     private Animator animator;
+    private ParticleSystem deathParticles;
     public float CameraShakeTime;
     public AnimationCurve CameraShakeCurve;
 
@@ -30,6 +31,8 @@ public class PlayerController : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         dead = true;
+        deathParticles = GetComponentInChildren<ParticleSystem>();
+        deathParticles.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -128,8 +131,8 @@ public class PlayerController : MonoBehaviour
         try { lastPushTile.enabled = true; } catch { } // Renable the collider of the last push tile contacted.
         
         
-        // If the target is a push tile, disable the tile's collider. This prevents the player from getting stuck on it.
-        if (target.collider.CompareTag("PushTile"))
+        // If the target is a push tile or a goal tile, disable the tile's collider. This prevents the player from getting stuck on it.
+        if (target.collider.CompareTag("PushTile") || target.collider.CompareTag("Finish"))
         {
             lastPushTile = target.collider;
             lastPushTile.enabled = false;
@@ -154,6 +157,7 @@ public class PlayerController : MonoBehaviour
     {
         dead = true;
         moving = false;
+        deathParticles.gameObject.SetActive(true);
     }
     public void Respawn()
     {
