@@ -99,11 +99,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0df30fa70ff30ac40a2ff8f811588ce4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  resizeWhenTimer: -1
   tokenType: 1
   sprites:
   - {fileID: 21300000, guid: 67a7ce4cd68f1534e81e85847c12d703, type: 3}
   - {fileID: 0}
   - {fileID: 21300000, guid: a7f2c5787b2ed394bba0116741c768e2, type: 3}
+  collectClips:
+  - {fileID: 8300000, guid: ebd2ddd56f8117d4dbaa1ce7ad127a81, type: 3}
+  - {fileID: 0}
+  - {fileID: 8300000, guid: 6c63819573b4fd1488b2b86835cde6a5, type: 3}
 --- !u!58 &195809006597673661
 CircleCollider2D:
   m_ObjectHideFlags: 0

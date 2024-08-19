@@ -111,6 +111,9 @@ MonoBehaviour:
   tokenMask:
     serializedVersion: 2
     m_Bits: 64
+  moveSFX: {fileID: 8300000, guid: bcc012eb851ca444e91a528cff3bb22a, type: 3}
+  dieSFX: {fileID: 8300000, guid: 43a20db071b4e174cab3d7c5e214fc53, type: 3}
+  spawnSFX: {fileID: 8300000, guid: 1332be8a59705c64488df044ef816a91, type: 3}
   timer: 0
   CameraShakeTime: 0.1
   CameraShakeCurve:

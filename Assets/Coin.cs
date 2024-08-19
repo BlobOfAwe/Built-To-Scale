@@ -7,14 +7,19 @@ public class Coin : MonoBehaviour
     public float resizeWhenTimer = -1; // Accessed by the player to indicate how much time into the movement should pass before the token is collected.
     [SerializeField] int tokenType; // an int with a value either 1 or -1. 1 for grow token, -1 for shrink token
     [SerializeField] Sprite[] sprites = new Sprite[3];
+    [SerializeField] AudioClip[] collectClips = new AudioClip[3];
     private SpriteRenderer spriteRender;
     private PlayerController player;
     private UIScale uiScale;
+    private AudioSource sfxManager;
+
     void Start()
     {
         spriteRender = GetComponent<SpriteRenderer>();
+        sfxManager = GameObject.FindGameObjectWithTag("SFX").GetComponent<AudioSource>();
         if (tokenType != 1 && tokenType != -1) { Debug.LogError("Sprite " + this.gameObject + " Token of Invalid Type " + tokenType); }
         spriteRender.sprite = sprites[tokenType + 1]; // Set the token's sprite based on its type.
+        
         player = FindAnyObjectByType<PlayerController>(); // Find the player object
         uiScale = GameObject.FindAnyObjectByType<UIScale>(); // Find the UI Scale
     }
@@ -25,7 +30,9 @@ public class Coin : MonoBehaviour
         Resize();
     }
     private void Resize()
-    { 
+    {
+        sfxManager.clip = collectClips[tokenType + 1]; // Set the token's collection clip based on its type
+        sfxManager.Play();
         player.size += tokenType; // Change the player's size by either growing by 1 or shrinking by 1
         tokenType *= -1; // Switch the token's type
         spriteRender.sprite = sprites[tokenType + 1]; // Set the token's sprite based on its type.

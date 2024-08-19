@@ -13,6 +13,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float castRange = 300;
     [SerializeField] LayerMask wallMask;
     [SerializeField] LayerMask tokenMask;
+    [SerializeField] AudioClip moveSFX;
+    [SerializeField] AudioClip dieSFX;
+    [SerializeField] AudioClip spawnSFX;
 
     private Vector2 originTransform;
     public float timer;
@@ -23,6 +26,7 @@ public class PlayerController : MonoBehaviour
     private Collider2D lastPushTile;
     private Animator animator;
     private ParticleSystem deathParticles;
+    private AudioSource sfxManager;
     public float CameraShakeTime;
     public AnimationCurve CameraShakeCurve;
 
@@ -30,9 +34,13 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
+        sfxManager = GameObject.FindGameObjectWithTag("SFX").GetComponent<AudioSource>();
         dead = true;
         deathParticles = GetComponentInChildren<ParticleSystem>();
         deathParticles.gameObject.SetActive(false);
+
+        sfxManager.clip = spawnSFX;
+        sfxManager.Play();
     }
 
     // Update is called once per frame
@@ -70,6 +78,7 @@ public class PlayerController : MonoBehaviour
 
             moving = false;
             transform.eulerAngles = Vector3.zero;
+            transform.localScale = Vector3.one;
             StartCoroutine(CameraShake());
             
             // If the currently registered target is a pushtile, force the player to move
@@ -146,6 +155,9 @@ public class PlayerController : MonoBehaviour
         
         originTransform = transform.position; // log the player's starting position as it moves
 
+        sfxManager.clip = moveSFX;
+        sfxManager.Play();
+
         // Rotate the player to face the direction of motion
         if (pointTo.y != 0) { transform.eulerAngles = new Vector3(0, 0, Mathf.Asin(pointTo.y) * Mathf.Rad2Deg - 90); }
         else if (pointTo.x != 0) { transform.eulerAngles = new Vector3(0, 0, Mathf.Acos(pointTo.x) * Mathf.Rad2Deg - 90); }
@@ -158,6 +170,8 @@ public class PlayerController : MonoBehaviour
         dead = true;
         moving = false;
         deathParticles.gameObject.SetActive(true);
+        sfxManager.clip = dieSFX;
+        sfxManager.Play();
     }
     public void Respawn()
     {

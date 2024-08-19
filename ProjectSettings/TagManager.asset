@@ -9,6 +9,7 @@ TagManager:
   - Wall
   - Kill
   - Music
+  - SFX
   layers:
   - Default
   - TransparentFX
