@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     private Vector2 originTransform;
     public float timer;
     RaycastHit2D target;
+    private Vector2 targetPosition;
 
 
     private Collider2D lastPushTile;
@@ -42,7 +43,7 @@ public class PlayerController : MonoBehaviour
         if (moving)
         {
             timer += Time.deltaTime;
-            transform.position = Vector2.Lerp(originTransform, target.point, timer / moveDuration);
+            transform.position = Vector2.Lerp(originTransform, targetPosition, timer / moveDuration);
         }
 
         // If the player is not moving and has input on any axis, move.
@@ -55,24 +56,22 @@ public class PlayerController : MonoBehaviour
     private void LateUpdate()
     {
         // If the player has reached their destination, stop moving
-        if (moving && transform.position == toVector3(target.point)) 
+        if (moving && transform.position == toVector3(targetPosition)) 
         {
             RecenterPosition();
             timer = 0;
-            
+
+            if (target.collider.CompareTag("Kill")) { Die(); }
+            else if (target.collider.CompareTag("Finish")) { target.collider.GetComponent<Goal>().GoalCheck(size); }
+
             moving = false;
             transform.eulerAngles = Vector3.zero;
-
-            try
+            
+            // If the currently registered target is a pushtile, force the player to move
+            if (target.collider.CompareTag("PushTile"))
             {
-                // If the currently registered target is a pushtile, force the player to move
-                if (target.collider.CompareTag("PushTile"))
-                {
-                    Move(lastPushTile.transform.right.x, lastPushTile.transform.right.y);
-
-                }
+                Move(lastPushTile.transform.right.x, lastPushTile.transform.right.y);
             }
-            catch { }
         }
     }
 
@@ -81,18 +80,6 @@ public class PlayerController : MonoBehaviour
     {
         transform.position = new Vector2(HalfRound(transform.position.x), HalfRound(transform.position.y));
     }
-
-    public void Die()
-    {
-        dead = true;
-        moving = false;
-    }
-    public void Respawn()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name); 
-    }
-
-    public void ReEnableMovement() { dead = false; }
 
     // Fire a circlecast in the direction of the input until it hits a wall. Then, move there.
     void Move(float hInput, float vInput)
@@ -119,12 +106,15 @@ public class PlayerController : MonoBehaviour
             else
             {
                 target = hit;
+
+                if (target.collider.CompareTag("Finish")) { targetPosition = target.collider.transform.position; }
+                else { targetPosition = target.point; }
                 break;
             }
         }
 
         // Once a target is determined, cast for all tokens between the player and the target
-        RaycastHit2D[] tokenHits = Physics2D.CircleCastAll(transform.position, 0.35f, pointTo, Vector3.Distance(transform.position, toVector3(target.point)), tokenMask);
+        RaycastHit2D[] tokenHits = Physics2D.CircleCastAll(transform.position, 0.35f, pointTo, Vector3.Distance(transform.position, toVector3(targetPosition)), tokenMask);
         
         // for each token detected, determine how much time until the player reaches the token, then trigger the collection routine
         foreach (RaycastHit2D token in tokenHits)
@@ -158,7 +148,17 @@ public class PlayerController : MonoBehaviour
         
     }
 
+    public void Die()
+    {
+        dead = true;
+        moving = false;
+    }
+    public void Respawn()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
 
+    public void ReEnableMovement() { dead = false; }
     // Utility functions
     static float HalfRound(float num) => (Mathf.FloorToInt(num) * 2 + 1) / 2f; // Round num to the nearest float ending in .5
     static Vector3 toVector3(Vector2 vector) => new Vector3(vector.x, vector.y); // Converts a vector 2 to Vector 3

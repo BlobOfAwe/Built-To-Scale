@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -97,55 +97,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Hazard_Electric  Current_0
+      name: Hazard_Electric  Current_2
       rect:
         serializedVersion: 2
         x: 40
         y: 40
         width: 16
         height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3c0b25c1810e0dd4aa3147ae4b849193
-      internalID: -814733391
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Hazard_Electric  Current_1
-      rect:
-        serializedVersion: 2
-        x: 126
-        y: 40
-        width: 35
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 380b036c3f9e4d0489c77a1bca77281e
-      internalID: -199871744
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Hazard_Electric  Current_2
-      rect:
-        serializedVersion: 2
-        x: 218
-        y: 38
-        width: 44
-        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -163,10 +121,10 @@ TextureImporter:
       name: Hazard_Electric  Current_3
       rect:
         serializedVersion: 2
-        x: 305
-        y: 38
-        width: 62
-        height: 18
+        x: 120
+        y: 40
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -184,10 +142,10 @@ TextureImporter:
       name: Hazard_Electric  Current_4
       rect:
         serializedVersion: 2
-        x: 397
+        x: 136
         y: 40
-        width: 70
-        height: 19
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -205,10 +163,10 @@ TextureImporter:
       name: Hazard_Electric  Current_5
       rect:
         serializedVersion: 2
-        x: 480
-        y: 26
-        width: 96
-        height: 43
+        x: 152
+        y: 40
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -218,6 +176,300 @@ TextureImporter:
       bones: []
       spriteID: 1fad6ab89b16d94488cf36c81a013414
       internalID: -91956435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hazard_Electric  Current_6
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 40
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 817b6db37496ca5499f88b1968c977d6
+      internalID: -673386780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hazard_Electric  Current_7
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 40
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2a1694fe33850f47abb6ba183841bc0
+      internalID: 1139124868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hazard_Electric  Current_8
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 40
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 348bd011039915945924d885a92d5169
+      internalID: -1056244612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hazard_Electric  Current_10
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 40
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ce46aef2785184459b30ab319e99047
+      internalID: -1930237749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hazard_Electric  Current_11
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 40
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39e3280a23cc4624d9ed9987322fb9f3
+      internalID: 1791513935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hazard_Electric  Current_12
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 40
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69a2b1ee8a0892845a4d1ca7c9f986ef
+      internalID: 827566403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hazard_Electric  Current_15
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 40
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95015484cf299e34aadaa180b4ca2858
+      internalID: 1015878792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hazard_Electric  Current_16
+      rect:
+        serializedVersion: 2
+        x: 424
+        y: 40
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b05771594b2552a449a34257e6e186ad
+      internalID: 1842358913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hazard_Electric  Current_17
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 40
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae5ff6f91fad09541a508d0991947410
+      internalID: 1189963719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hazard_Electric  Current_20
+      rect:
+        serializedVersion: 2
+        x: 488
+        y: 40
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d84363ee7b8454e499bb0cfcf159b202
+      internalID: 317951500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hazard_Electric  Current_21
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 40
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cf79aa2b96dc104ba51c60065f4982c
+      internalID: 432773466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hazard_Electric  Current_22
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 40
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1383dc994e8f0c14c9abddb61dd19201
+      internalID: 1213358292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hazard_Electric  Current_23
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 40
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3724e8e6d78ce8646859e8d02158daeb
+      internalID: -47998138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hazard_Electric  Current_24
+      rect:
+        serializedVersion: 2
+        x: 552
+        y: 40
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3a575419cd63dc4799377cfb30c54a6
+      internalID: -2073167885
       vertices: []
       indices: 
       edges: []
@@ -235,10 +487,34 @@ TextureImporter:
     nameFileIdTable:
       Hazard_Electric  Current_0: -814733391
       Hazard_Electric  Current_1: -199871744
+      Hazard_Electric  Current_10: -1930237749
+      Hazard_Electric  Current_11: 1791513935
+      Hazard_Electric  Current_12: 827566403
+      Hazard_Electric  Current_13: 843084279
+      Hazard_Electric  Current_14: 192567485
+      Hazard_Electric  Current_15: 1015878792
+      Hazard_Electric  Current_16: 1842358913
+      Hazard_Electric  Current_17: 1189963719
+      Hazard_Electric  Current_18: -92546363
+      Hazard_Electric  Current_19: -892433161
       Hazard_Electric  Current_2: 78533477
+      Hazard_Electric  Current_20: 317951500
+      Hazard_Electric  Current_21: 432773466
+      Hazard_Electric  Current_22: 1213358292
+      Hazard_Electric  Current_23: -47998138
+      Hazard_Electric  Current_24: -2073167885
+      Hazard_Electric  Current_25: 2102403143
+      Hazard_Electric  Current_26: 1196086398
+      Hazard_Electric  Current_27: -1617015560
+      Hazard_Electric  Current_28: 1380386191
+      Hazard_Electric  Current_29: -176664016
       Hazard_Electric  Current_3: 292047151
       Hazard_Electric  Current_4: -1858295648
       Hazard_Electric  Current_5: -91956435
+      Hazard_Electric  Current_6: -673386780
+      Hazard_Electric  Current_7: 1139124868
+      Hazard_Electric  Current_8: -1056244612
+      Hazard_Electric  Current_9: 64570690
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
