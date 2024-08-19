@@ -5,12 +5,18 @@ using UnityEngine.SceneManagement;
 public class Goal : MonoBehaviour
 {
     public int requiredSize = 0;
+    [SerializeField] Sprite[] activeGoal = new Sprite[5];
+    [SerializeField] Sprite[] inactiveGoal = new Sprite[5];
     [SerializeField] AudioClip levelComplete;
     private AudioSource musicManager;
+    private PlayerController player;
+    private SpriteRenderer spriteRender;
 
     private void Start()
     {
         musicManager = GameObject.Find("MusicManager").GetComponent<AudioSource>();
+        player = FindAnyObjectByType<PlayerController>();
+        spriteRender = GetComponent<SpriteRenderer>();
     }
 
     public void GoalCheck(int size)
@@ -19,6 +25,12 @@ public class Goal : MonoBehaviour
         {
             StartCoroutine("FinishLevel");
         }
+    }
+
+    private void Update()
+    {
+        if (player.size == requiredSize) { spriteRender.sprite = activeGoal[requiredSize + 2]; }
+        else { spriteRender.sprite = inactiveGoal[requiredSize + 2]; }
     }
 
     private IEnumerator FinishLevel()
