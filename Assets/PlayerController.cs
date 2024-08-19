@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -26,7 +27,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
-        dead = false;
+        dead = true;
     }
 
     // Update is called once per frame
@@ -45,7 +46,7 @@ public class PlayerController : MonoBehaviour
         }
 
         // If the player is not moving and has input on any axis, move.
-        else if (Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0)
+        else if ((Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0) && !dead)
         {
             Move(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         }
@@ -80,6 +81,18 @@ public class PlayerController : MonoBehaviour
     {
         transform.position = new Vector2(HalfRound(transform.position.x), HalfRound(transform.position.y));
     }
+
+    public void Die()
+    {
+        dead = true;
+        moving = false;
+    }
+    public void Respawn()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name); 
+    }
+
+    public void ReEnableMovement() { dead = false; }
 
     // Fire a circlecast in the direction of the input until it hits a wall. Then, move there.
     void Move(float hInput, float vInput)

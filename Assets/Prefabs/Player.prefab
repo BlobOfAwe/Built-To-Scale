@@ -106,7 +106,10 @@ MonoBehaviour:
   castRange: 30
   wallMask:
     serializedVersion: 2
-    m_Bits: 72
+    m_Bits: 8
+  tokenMask:
+    serializedVersion: 2
+    m_Bits: 64
   timer: 0
   CameraShakeTime: 0
   MaxCameraTime: 0
@@ -165,4 +168,4 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.09
