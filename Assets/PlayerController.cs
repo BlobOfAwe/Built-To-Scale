@@ -79,7 +79,6 @@ public class PlayerController : MonoBehaviour
             moving = false;
             transform.eulerAngles = Vector3.zero;
             transform.localScale = Vector3.one;
-            StartCoroutine(CameraShake());
             
             // If the currently registered target is a pushtile, force the player to move
             if (target.collider.CompareTag("PushTile"))         
@@ -169,9 +168,13 @@ public class PlayerController : MonoBehaviour
     {
         dead = true;
         moving = false;
+        StartCoroutine(CameraShake());
+
         deathParticles.gameObject.SetActive(true);
         sfxManager.clip = dieSFX;
         sfxManager.Play();
+
+
     }
     public void Respawn()
     {

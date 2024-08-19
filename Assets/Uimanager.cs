@@ -5,26 +5,31 @@ using UnityEngine;
 public class Uimanager : MonoBehaviour
 {
     public GameObject PauseMenu;
-    public GameObject RestartButton;
+    private bool paused;
+   
     GameObject globalPauseMenuinstance;
     GameObject globalRestartinstance;
 
     RectTransform pauseMenuTransform;
-    RectTransform RestartTransform;
+
     void Start()
     {
-     
+        paused = false;
     }
     // Update is called once per frame
     void Update()
     {
-        DontDestroyOnLoad(this);
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            globalPauseMenuinstance.SetActive(true);
+            paused = !paused;
+            globalPauseMenuinstance.SetActive(paused);
             float RightpauseMenuTransform = -pauseMenuTransform.offsetMax.x;
             RightpauseMenuTransform = 0;
-            RestartTransform.anchoredPosition = new Vector3(-80, 15, 0);
+
+            foreach (Transform t in globalPauseMenuinstance.transform)
+            {
+                t.gameObject.SetActive(paused);
+            }
 
         }
     }
@@ -35,14 +40,13 @@ public class Uimanager : MonoBehaviour
         if (level > 0) 
         {
             GameObject PausemenuInstance = Instantiate(PauseMenu);
-            GameObject restartButtonInstance = Instantiate(RestartButton);
+    
             globalPauseMenuinstance = PausemenuInstance;
-            globalRestartinstance = restartButtonInstance;
+          
             pauseMenuTransform = globalPauseMenuinstance.GetComponent<RectTransform>();
-            RestartTransform = globalRestartinstance.GetComponent<RectTransform>();
+           
             PausemenuInstance.gameObject.transform.SetParent(GameObject.Find("Canvas").transform, false);
-            restartButtonInstance.gameObject.transform.SetParent(GameObject.Find("Canvas").transform, false);
-            restartButtonInstance.gameObject.SetActive(true);
+           
         }
     }
 
