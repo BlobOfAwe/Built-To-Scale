@@ -690,22 +690,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
-    - target: {fileID: 6555501098912657472, guid: 55dd40bd640d06e4b864d71e7e4b55bf, type: 3}
-      propertyPath: m_Color.a
-      value: 0.9764706
-      objectReference: {fileID: 0}
-    - target: {fileID: 7589203209453015880, guid: 55dd40bd640d06e4b864d71e7e4b55bf, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0.032427408
-      objectReference: {fileID: 0}
-    - target: {fileID: 7589203209453015880, guid: 55dd40bd640d06e4b864d71e7e4b55bf, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7589203209453015880, guid: 55dd40bd640d06e4b864d71e7e4b55bf, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -0.5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -722,6 +706,10 @@ PrefabInstance:
     - target: {fileID: 1782189626073897790, guid: 7709df457f4f3134293e92424c921e8c, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 1970556208802790423, guid: 7709df457f4f3134293e92424c921e8c, type: 3}
+      propertyPath: CameraShakeTime
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3006953214172224702, guid: 7709df457f4f3134293e92424c921e8c, type: 3}
       propertyPath: m_LocalPosition.x
