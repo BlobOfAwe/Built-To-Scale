@@ -13969,6 +13969,7 @@ GameObject:
   - component: {fileID: 2059806919}
   - component: {fileID: 2059806921}
   - component: {fileID: 2059806920}
+  - component: {fileID: 2059806922}
   m_Layer: 5
   m_Name: Needle
   m_TagString: Untagged
@@ -13983,18 +13984,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2059806918}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: -0, z: 0.37136796, w: -0.9284858}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 690891556}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.41000003, y: 0.18}
-  m_AnchorMax: {x: 0.59000003, y: 0.58000004}
-  m_AnchoredPosition: {x: 0, y: -0.16226196}
-  m_SizeDelta: {x: -0.72999954, y: 0}
-  m_Pivot: {x: 0.5, y: 0.8040567}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 316.4}
+  m_AnchorMin: {x: 0.0976392, y: 0.08800001}
+  m_AnchorMax: {x: 0.9188522, y: 0.91200006}
+  m_AnchoredPosition: {x: -1.0000153, y: 0.46465302}
+  m_SizeDelta: {x: 0, y: -1}
+  m_Pivot: {x: 0.5058818, y: 0.53528357}
 --- !u!114 &2059806920
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14033,6 +14034,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2059806918}
   m_CullTransparentMesh: 1
+--- !u!114 &2059806922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2059806918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f48f85b097e42d478d9fd98378173c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  needleAngles:
+  - 316
+  - 240
+  - 180
+  - 117
+  - 40
 --- !u!1 &2100934144
 GameObject:
   m_ObjectHideFlags: 0

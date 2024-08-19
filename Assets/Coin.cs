@@ -9,13 +9,14 @@ public class Coin : MonoBehaviour
     [SerializeField] Sprite[] sprites = new Sprite[3];
     private SpriteRenderer spriteRender;
     private PlayerController player;
-    // make sure coins have a rigibody with frozen constraints & collider that istrigger
+    private UIScale uiScale;
     void Start()
     {
         spriteRender = GetComponent<SpriteRenderer>();
         if (tokenType != 1 && tokenType != -1) { Debug.LogError("Sprite " + this.gameObject + " Token of Invalid Type " + tokenType); }
         spriteRender.sprite = sprites[tokenType + 1]; // Set the token's sprite based on its type.
         player = FindAnyObjectByType<PlayerController>(); // Find the player object
+        uiScale = GameObject.FindAnyObjectByType<UIScale>(); // Find the UI Scale
     }
 
     public IEnumerator Collect()
@@ -31,5 +32,7 @@ public class Coin : MonoBehaviour
 
         // If the player's size exceeds its boundary, kill the player
         if (player.size < -2 || player.size > 2) { player.Die(); }
+
+        uiScale.SetAngle(player.size); // Set the UI Scale's angle to match the player's size
     }
 }
