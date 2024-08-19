@@ -60,6 +60,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SFXManager Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 6967883082897756714, guid: 60fe5d82df5f349499ebe6716bc97ba0, type: 3}
+      propertyPath: m_TagString
+      value: SFX
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
