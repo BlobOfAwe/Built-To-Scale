@@ -5,12 +5,12 @@ using UnityEngine;
 public class Uimanager : MonoBehaviour
 {
     public GameObject PauseMenu;
-    public GameObject RestartButton;
+   
     GameObject globalPauseMenuinstance;
     GameObject globalRestartinstance;
 
     RectTransform pauseMenuTransform;
-    RectTransform RestartTransform;
+
     void Start()
     {
      
@@ -24,7 +24,11 @@ public class Uimanager : MonoBehaviour
             globalPauseMenuinstance.SetActive(true);
             float RightpauseMenuTransform = -pauseMenuTransform.offsetMax.x;
             RightpauseMenuTransform = 0;
-            RestartTransform.anchoredPosition = new Vector3(-80, 15, 0);
+
+            foreach (Transform t in globalPauseMenuinstance.transform)
+            {
+                t.gameObject.SetActive(true);
+            }
 
         }
     }
@@ -35,14 +39,13 @@ public class Uimanager : MonoBehaviour
         if (level > 0) 
         {
             GameObject PausemenuInstance = Instantiate(PauseMenu);
-            GameObject restartButtonInstance = Instantiate(RestartButton);
+    
             globalPauseMenuinstance = PausemenuInstance;
-            globalRestartinstance = restartButtonInstance;
+          
             pauseMenuTransform = globalPauseMenuinstance.GetComponent<RectTransform>();
-            RestartTransform = globalRestartinstance.GetComponent<RectTransform>();
+           
             PausemenuInstance.gameObject.transform.SetParent(GameObject.Find("Canvas").transform, false);
-            restartButtonInstance.gameObject.transform.SetParent(GameObject.Find("Canvas").transform, false);
-            restartButtonInstance.gameObject.SetActive(true);
+           
         }
     }
 
