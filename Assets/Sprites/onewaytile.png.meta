@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e305c5a0baadd0241b4d5ccf1d6b8561
+guid: d322e4a41dfd52a4b92e67a6578018ff
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,11 +97,11 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Hazard_Electric  Current_2
+      name: onewaytile_0
       rect:
         serializedVersion: 2
-        x: 40
-        y: 40
+        x: 0
+        y: 0
         width: 16
         height: 16
       alignment: 0
@@ -111,18 +111,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 384dead9115b4df43ab1f757c91a1484
-      internalID: 78533477
+      spriteID: c156ddcd6891c35489e509856bdb04b7
+      internalID: -1894554748
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hazard_Electric  Current_3
+      name: onewaytile_1
       rect:
         serializedVersion: 2
-        x: 120
-        y: 40
+        x: 16
+        y: 0
         width: 16
         height: 16
       alignment: 0
@@ -132,18 +132,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 56c38b1a682413344a807032cfe33341
-      internalID: 292047151
+      spriteID: 7813cf2d21b1bfb46af11e4b54670327
+      internalID: -8918350
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hazard_Electric  Current_4
+      name: onewaytile_2
       rect:
         serializedVersion: 2
-        x: 136
-        y: 40
+        x: 32
+        y: 0
         width: 16
         height: 16
       alignment: 0
@@ -153,18 +153,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2568ca4430ce36c40918c805168b54ab
-      internalID: -1858295648
+      spriteID: ed6514532df2dc14ba64e22f57dd4109
+      internalID: 749541782
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hazard_Electric  Current_5
+      name: onewaytile_3
       rect:
         serializedVersion: 2
-        x: 152
-        y: 40
+        x: 48
+        y: 0
         width: 16
         height: 16
       alignment: 0
@@ -174,18 +174,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1fad6ab89b16d94488cf36c81a013414
-      internalID: -91956435
+      spriteID: a1be2f05c2217844786cc77ee7fa309c
+      internalID: 1545443731
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hazard_Electric  Current_6
+      name: onewaytile_4
       rect:
         serializedVersion: 2
-        x: 216
-        y: 40
+        x: 64
+        y: 0
         width: 16
         height: 16
       alignment: 0
@@ -195,18 +195,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 817b6db37496ca5499f88b1968c977d6
-      internalID: -673386780
+      spriteID: 9ba5b80bdded92f46b111188201b8e26
+      internalID: 84062868
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hazard_Electric  Current_7
+      name: onewaytile_5
       rect:
         serializedVersion: 2
-        x: 232
-        y: 40
+        x: 80
+        y: 0
         width: 16
         height: 16
       alignment: 0
@@ -216,18 +216,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d2a1694fe33850f47abb6ba183841bc0
-      internalID: 1139124868
+      spriteID: 7fccd55a1a4386e42ab2ef0111d47f53
+      internalID: -1890303983
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hazard_Electric  Current_8
+      name: onewaytile_6
       rect:
         serializedVersion: 2
-        x: 248
-        y: 40
+        x: 96
+        y: 0
         width: 16
         height: 16
       alignment: 0
@@ -237,18 +237,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 348bd011039915945924d885a92d5169
-      internalID: -1056244612
+      spriteID: 40b8c2a131bb3a549858c8513d93673a
+      internalID: 1532107673
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hazard_Electric  Current_10
+      name: onewaytile_7
       rect:
         serializedVersion: 2
-        x: 312
-        y: 40
+        x: 112
+        y: 0
         width: 16
         height: 16
       alignment: 0
@@ -258,18 +258,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5ce46aef2785184459b30ab319e99047
-      internalID: -1930237749
+      spriteID: 7926313d7515a524ba6b28793b338f51
+      internalID: -276417912
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hazard_Electric  Current_11
+      name: onewaytile_8
       rect:
         serializedVersion: 2
-        x: 328
-        y: 40
+        x: 128
+        y: 0
         width: 16
         height: 16
       alignment: 0
@@ -279,18 +279,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 39e3280a23cc4624d9ed9987322fb9f3
-      internalID: 1791513935
+      spriteID: 20d7e62e051dfd24998a4dda769d9e32
+      internalID: -37847688
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hazard_Electric  Current_12
+      name: onewaytile_9
       rect:
         serializedVersion: 2
-        x: 344
-        y: 40
+        x: 144
+        y: 0
         width: 16
         height: 16
       alignment: 0
@@ -300,18 +300,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 69a2b1ee8a0892845a4d1ca7c9f986ef
-      internalID: 827566403
+      spriteID: 1b57e1f2aed642c4f958c4a38d09b0d8
+      internalID: -831076100
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hazard_Electric  Current_15
+      name: onewaytile_10
       rect:
         serializedVersion: 2
-        x: 408
-        y: 40
+        x: 160
+        y: 0
         width: 16
         height: 16
       alignment: 0
@@ -321,18 +321,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 95015484cf299e34aadaa180b4ca2858
-      internalID: 1015878792
+      spriteID: f83ff22f0210e3f4c9c1bd69ddc4b28d
+      internalID: -818719358
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hazard_Electric  Current_16
+      name: onewaytile_11
       rect:
         serializedVersion: 2
-        x: 424
-        y: 40
+        x: 176
+        y: 0
         width: 16
         height: 16
       alignment: 0
@@ -342,18 +342,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b05771594b2552a449a34257e6e186ad
-      internalID: 1842358913
+      spriteID: e5ab6fdd7070fbc4cb6cc28a4bbce3b3
+      internalID: 1799581961
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hazard_Electric  Current_17
+      name: onewaytile_12
       rect:
         serializedVersion: 2
-        x: 440
-        y: 40
+        x: 192
+        y: 0
         width: 16
         height: 16
       alignment: 0
@@ -363,113 +363,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ae5ff6f91fad09541a508d0991947410
-      internalID: 1189963719
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Hazard_Electric  Current_20
-      rect:
-        serializedVersion: 2
-        x: 488
-        y: 40
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d84363ee7b8454e499bb0cfcf159b202
-      internalID: 317951500
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Hazard_Electric  Current_21
-      rect:
-        serializedVersion: 2
-        x: 504
-        y: 40
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8cf79aa2b96dc104ba51c60065f4982c
-      internalID: 432773466
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Hazard_Electric  Current_22
-      rect:
-        serializedVersion: 2
-        x: 520
-        y: 40
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1383dc994e8f0c14c9abddb61dd19201
-      internalID: 1213358292
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Hazard_Electric  Current_23
-      rect:
-        serializedVersion: 2
-        x: 536
-        y: 40
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3724e8e6d78ce8646859e8d02158daeb
-      internalID: -47998138
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Hazard_Electric  Current_24
-      rect:
-        serializedVersion: 2
-        x: 552
-        y: 40
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a3a575419cd63dc4799377cfb30c54a6
-      internalID: -2073167885
+      spriteID: dbd26804c8b7cd24b8d82e6f52e00bf9
+      internalID: 76501495
       vertices: []
       indices: 
       edges: []
@@ -485,36 +380,19 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Hazard_Electric  Current_0: -814733391
-      Hazard_Electric  Current_1: -199871744
-      Hazard_Electric  Current_10: -1930237749
-      Hazard_Electric  Current_11: 1791513935
-      Hazard_Electric  Current_12: 827566403
-      Hazard_Electric  Current_13: 843084279
-      Hazard_Electric  Current_14: 192567485
-      Hazard_Electric  Current_15: 1015878792
-      Hazard_Electric  Current_16: 1842358913
-      Hazard_Electric  Current_17: 1189963719
-      Hazard_Electric  Current_18: -92546363
-      Hazard_Electric  Current_19: -892433161
-      Hazard_Electric  Current_2: 78533477
-      Hazard_Electric  Current_20: 317951500
-      Hazard_Electric  Current_21: 432773466
-      Hazard_Electric  Current_22: 1213358292
-      Hazard_Electric  Current_23: -47998138
-      Hazard_Electric  Current_24: -2073167885
-      Hazard_Electric  Current_25: 2102403143
-      Hazard_Electric  Current_26: 1196086398
-      Hazard_Electric  Current_27: -1617015560
-      Hazard_Electric  Current_28: 1380386191
-      Hazard_Electric  Current_29: -176664016
-      Hazard_Electric  Current_3: 292047151
-      Hazard_Electric  Current_4: -1858295648
-      Hazard_Electric  Current_5: -91956435
-      Hazard_Electric  Current_6: -673386780
-      Hazard_Electric  Current_7: 1139124868
-      Hazard_Electric  Current_8: -1056244612
-      Hazard_Electric  Current_9: 64570690
+      onewaytile_0: -1894554748
+      onewaytile_1: -8918350
+      onewaytile_10: -818719358
+      onewaytile_11: 1799581961
+      onewaytile_12: 76501495
+      onewaytile_2: 749541782
+      onewaytile_3: 1545443731
+      onewaytile_4: 84062868
+      onewaytile_5: -1890303983
+      onewaytile_6: 1532107673
+      onewaytile_7: -276417912
+      onewaytile_8: -37847688
+      onewaytile_9: -831076100
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

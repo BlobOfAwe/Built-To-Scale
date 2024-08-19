@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e305c5a0baadd0241b4d5ccf1d6b8561
+guid: 4503dbb850f88db4a936ecd8737a346b
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,11 +97,11 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Hazard_Electric  Current_2
+      name: Lab_Tiles_Overlay_0
       rect:
         serializedVersion: 2
-        x: 40
-        y: 40
+        x: 0
+        y: 48
         width: 16
         height: 16
       alignment: 0
@@ -111,18 +111,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 384dead9115b4df43ab1f757c91a1484
-      internalID: 78533477
+      spriteID: 0757c3cb3b923784bb055afd31deb1da
+      internalID: 899732351
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hazard_Electric  Current_3
+      name: Lab_Tiles_Overlay_1
       rect:
         serializedVersion: 2
-        x: 120
-        y: 40
+        x: 16
+        y: 48
         width: 16
         height: 16
       alignment: 0
@@ -132,18 +132,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 56c38b1a682413344a807032cfe33341
-      internalID: 292047151
+      spriteID: 3e6b210b568d67d44a4b0a2eaeb1139c
+      internalID: -1564183252
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hazard_Electric  Current_4
+      name: Lab_Tiles_Overlay_2
       rect:
         serializedVersion: 2
-        x: 136
-        y: 40
+        x: 32
+        y: 48
         width: 16
         height: 16
       alignment: 0
@@ -153,18 +153,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2568ca4430ce36c40918c805168b54ab
-      internalID: -1858295648
+      spriteID: 92efc8f8b367fd6419b9dbc287aae72f
+      internalID: -1987286173
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hazard_Electric  Current_5
+      name: Lab_Tiles_Overlay_3
       rect:
         serializedVersion: 2
-        x: 152
-        y: 40
+        x: 48
+        y: 48
         width: 16
         height: 16
       alignment: 0
@@ -174,18 +174,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1fad6ab89b16d94488cf36c81a013414
-      internalID: -91956435
+      spriteID: ba9847e5b89f6ee4fae42e21476acf15
+      internalID: 121411147
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hazard_Electric  Current_6
+      name: Lab_Tiles_Overlay_4
       rect:
         serializedVersion: 2
-        x: 216
-        y: 40
+        x: 0
+        y: 32
         width: 16
         height: 16
       alignment: 0
@@ -195,18 +195,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 817b6db37496ca5499f88b1968c977d6
-      internalID: -673386780
+      spriteID: 705198bf93efb134fade8fa47830de71
+      internalID: -1490995242
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hazard_Electric  Current_7
+      name: Lab_Tiles_Overlay_5
       rect:
         serializedVersion: 2
-        x: 232
-        y: 40
+        x: 16
+        y: 32
         width: 16
         height: 16
       alignment: 0
@@ -216,18 +216,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d2a1694fe33850f47abb6ba183841bc0
-      internalID: 1139124868
+      spriteID: 0005ae30b786c094e8a2bb476b62a02b
+      internalID: -992988853
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hazard_Electric  Current_8
+      name: Lab_Tiles_Overlay_6
       rect:
         serializedVersion: 2
-        x: 248
-        y: 40
+        x: 32
+        y: 32
         width: 16
         height: 16
       alignment: 0
@@ -237,18 +237,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 348bd011039915945924d885a92d5169
-      internalID: -1056244612
+      spriteID: 98f17fd7db351d546a2ff60c726d2ab9
+      internalID: -1481330159
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hazard_Electric  Current_10
+      name: Lab_Tiles_Overlay_7
       rect:
         serializedVersion: 2
-        x: 312
-        y: 40
+        x: 48
+        y: 32
         width: 16
         height: 16
       alignment: 0
@@ -258,18 +258,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5ce46aef2785184459b30ab319e99047
-      internalID: -1930237749
+      spriteID: 1f0573f5323dfe74aaf33343394bbeb9
+      internalID: -1982254545
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hazard_Electric  Current_11
+      name: Lab_Tiles_Overlay_8
       rect:
         serializedVersion: 2
-        x: 328
-        y: 40
+        x: 0
+        y: 16
         width: 16
         height: 16
       alignment: 0
@@ -279,18 +279,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 39e3280a23cc4624d9ed9987322fb9f3
-      internalID: 1791513935
+      spriteID: b5d21ad4b6f71124dbed6a59ffa196bd
+      internalID: -1069796614
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hazard_Electric  Current_12
+      name: Lab_Tiles_Overlay_9
       rect:
         serializedVersion: 2
-        x: 344
-        y: 40
+        x: 16
+        y: 16
         width: 16
         height: 16
       alignment: 0
@@ -300,18 +300,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 69a2b1ee8a0892845a4d1ca7c9f986ef
-      internalID: 827566403
+      spriteID: 34460cac69a227649a32077c68eb9672
+      internalID: 1549645314
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hazard_Electric  Current_15
+      name: Lab_Tiles_Overlay_10
       rect:
         serializedVersion: 2
-        x: 408
-        y: 40
+        x: 32
+        y: 16
         width: 16
         height: 16
       alignment: 0
@@ -321,18 +321,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 95015484cf299e34aadaa180b4ca2858
-      internalID: 1015878792
+      spriteID: 9aa384d0b23daa54d997cfd291594c3a
+      internalID: -322467098
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hazard_Electric  Current_16
+      name: Lab_Tiles_Overlay_11
       rect:
         serializedVersion: 2
-        x: 424
-        y: 40
+        x: 48
+        y: 16
         width: 16
         height: 16
       alignment: 0
@@ -342,18 +342,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b05771594b2552a449a34257e6e186ad
-      internalID: 1842358913
+      spriteID: e7f8d9adc5067a74b990a4d4fa73487e
+      internalID: 2070769530
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hazard_Electric  Current_17
+      name: Lab_Tiles_Overlay_12
       rect:
         serializedVersion: 2
-        x: 440
-        y: 40
+        x: 0
+        y: 0
         width: 16
         height: 16
       alignment: 0
@@ -363,113 +363,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ae5ff6f91fad09541a508d0991947410
-      internalID: 1189963719
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Hazard_Electric  Current_20
-      rect:
-        serializedVersion: 2
-        x: 488
-        y: 40
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d84363ee7b8454e499bb0cfcf159b202
-      internalID: 317951500
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Hazard_Electric  Current_21
-      rect:
-        serializedVersion: 2
-        x: 504
-        y: 40
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8cf79aa2b96dc104ba51c60065f4982c
-      internalID: 432773466
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Hazard_Electric  Current_22
-      rect:
-        serializedVersion: 2
-        x: 520
-        y: 40
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1383dc994e8f0c14c9abddb61dd19201
-      internalID: 1213358292
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Hazard_Electric  Current_23
-      rect:
-        serializedVersion: 2
-        x: 536
-        y: 40
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3724e8e6d78ce8646859e8d02158daeb
-      internalID: -47998138
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Hazard_Electric  Current_24
-      rect:
-        serializedVersion: 2
-        x: 552
-        y: 40
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a3a575419cd63dc4799377cfb30c54a6
-      internalID: -2073167885
+      spriteID: 26c30e0017c3aa04c92d06730f2b96d2
+      internalID: -56703097
       vertices: []
       indices: 
       edges: []
@@ -485,36 +380,19 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Hazard_Electric  Current_0: -814733391
-      Hazard_Electric  Current_1: -199871744
-      Hazard_Electric  Current_10: -1930237749
-      Hazard_Electric  Current_11: 1791513935
-      Hazard_Electric  Current_12: 827566403
-      Hazard_Electric  Current_13: 843084279
-      Hazard_Electric  Current_14: 192567485
-      Hazard_Electric  Current_15: 1015878792
-      Hazard_Electric  Current_16: 1842358913
-      Hazard_Electric  Current_17: 1189963719
-      Hazard_Electric  Current_18: -92546363
-      Hazard_Electric  Current_19: -892433161
-      Hazard_Electric  Current_2: 78533477
-      Hazard_Electric  Current_20: 317951500
-      Hazard_Electric  Current_21: 432773466
-      Hazard_Electric  Current_22: 1213358292
-      Hazard_Electric  Current_23: -47998138
-      Hazard_Electric  Current_24: -2073167885
-      Hazard_Electric  Current_25: 2102403143
-      Hazard_Electric  Current_26: 1196086398
-      Hazard_Electric  Current_27: -1617015560
-      Hazard_Electric  Current_28: 1380386191
-      Hazard_Electric  Current_29: -176664016
-      Hazard_Electric  Current_3: 292047151
-      Hazard_Electric  Current_4: -1858295648
-      Hazard_Electric  Current_5: -91956435
-      Hazard_Electric  Current_6: -673386780
-      Hazard_Electric  Current_7: 1139124868
-      Hazard_Electric  Current_8: -1056244612
-      Hazard_Electric  Current_9: 64570690
+      Lab_Tiles_Overlay_0: 899732351
+      Lab_Tiles_Overlay_1: -1564183252
+      Lab_Tiles_Overlay_10: -322467098
+      Lab_Tiles_Overlay_11: 2070769530
+      Lab_Tiles_Overlay_12: -56703097
+      Lab_Tiles_Overlay_2: -1987286173
+      Lab_Tiles_Overlay_3: 121411147
+      Lab_Tiles_Overlay_4: -1490995242
+      Lab_Tiles_Overlay_5: -992988853
+      Lab_Tiles_Overlay_6: -1481330159
+      Lab_Tiles_Overlay_7: -1982254545
+      Lab_Tiles_Overlay_8: -1069796614
+      Lab_Tiles_Overlay_9: 1549645314
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

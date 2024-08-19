@@ -30,6 +30,6 @@ public class Coin : MonoBehaviour
         spriteRender.sprite = sprites[tokenType + 1]; // Set the token's sprite based on its type.
 
         // If the player's size exceeds its boundary, kill the player
-        if (player.size < -2 || player.size > 2) { player.dead = true; }
+        if (player.size < -2 || player.size > 2) { player.Die(); }
     }
 }
