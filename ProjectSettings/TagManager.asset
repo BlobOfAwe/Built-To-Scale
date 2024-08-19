@@ -8,6 +8,7 @@ TagManager:
   - OneWay
   - Wall
   - Kill
+  - Music
   layers:
   - Default
   - TransparentFX

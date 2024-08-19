@@ -6,11 +6,11 @@ public class Goal : MonoBehaviour
 {
     public int requiredSize = 0;
     [SerializeField] AudioClip levelComplete;
-    private AudioSource audioManager;
+    private AudioSource musicManager;
 
     private void Start()
     {
-        audioManager = GameObject.FindAnyObjectByType<AudioSource>();
+        musicManager = GameObject.Find("MusicManager").GetComponent<AudioSource>();
     }
 
     public void GoalCheck(int size)
@@ -23,11 +23,15 @@ public class Goal : MonoBehaviour
 
     private IEnumerator FinishLevel()
     {
-        audioManager.Pause();
-        audioManager.clip = levelComplete;
-        audioManager.Play();
+        gameObject.GetComponent<Collider2D>().enabled = true;
+        musicManager.Pause();
+        musicManager.loop = false;
+        musicManager.clip = levelComplete;
+        musicManager.Play();
 
-        while (audioManager.isPlaying) { yield return null; }
+        while (musicManager.isPlaying) { yield return null; }
+
+        Destroy(musicManager.gameObject);
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
