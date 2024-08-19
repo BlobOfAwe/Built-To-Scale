@@ -6,13 +6,15 @@ public class PlayerController : MonoBehaviour
 {
     public bool moving;
     public int size;
+    public bool dead;
     [SerializeField] float moveDuration = 0.5f;
     [SerializeField] float castRange = 300;
     [SerializeField] LayerMask wallMask;
+    [SerializeField] LayerMask tokenMask;
 
     private Vector2 originTransform;
-    [SerializeField] float timer;
-    RaycastHit2D targetHit;
+    public float timer;
+    RaycastHit2D target;
 
 
     private Collider2D lastPushTile;
@@ -24,19 +26,22 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
+        dead = false;
     }
 
     // Update is called once per frame
     void Update()
     {
+        // Set Animator variables each frame
         animator.SetBool("moving", moving);
         animator.SetInteger("size", size);
+        animator.SetBool("dead", dead);
 
         // If the player is already moving, continue moving
         if (moving)
         {
             timer += Time.deltaTime;
-            transform.position = Vector2.Lerp(originTransform, targetHit.point, timer / moveDuration);
+            transform.position = Vector2.Lerp(originTransform, target.point, timer / moveDuration);
         }
 
         // If the player is not moving and has input on any axis, move.
@@ -49,7 +54,7 @@ public class PlayerController : MonoBehaviour
     private void LateUpdate()
     {
         // If the player has reached their destination, stop moving
-        if (moving && transform.position == toVector3(targetHit.point)) 
+        if (moving && transform.position == toVector3(target.point)) 
         {
             RecenterPosition();
             timer = 0;
@@ -60,7 +65,7 @@ public class PlayerController : MonoBehaviour
             try
             {
                 // If the currently registered target is a pushtile, force the player to move
-                if (targetHit.collider.CompareTag("PushTile"))
+                if (target.collider.CompareTag("PushTile"))
                 {
                     Move(lastPushTile.transform.right.x, lastPushTile.transform.right.y);
 
@@ -88,9 +93,34 @@ public class PlayerController : MonoBehaviour
         else { Debug.LogError("Tried to move with no direction!"); return; } // If there is somehow no input, throw an error and return void.
 
 
-        RaycastHit2D target = Physics2D.CircleCast(transform.position, 0.35f, pointTo, castRange, wallMask); // Fire the circlecast to detect a wall
-        try { lastPushTile.enabled = true; } catch { } // Renable the collider of the last push tile contacted.
+        RaycastHit2D[] allHits = Physics2D.CircleCastAll(transform.position, 0.35f, pointTo, castRange, wallMask); // Fire the circlecast to detect all objects in its path
+        foreach (RaycastHit2D hit in allHits) 
+        {
+            // If the target is a OneWay wall, check if the player is on the correct side of the wall
+            // Check this by seeing if the side of the tile with the collider is farther away than the tile's center. If it is, disable the collider and redo the circlecast
+            if (hit.collider.CompareTag("OneWay") && Vector3.Distance(transform.position, toVector3(hit.point)) > Vector3.Distance(transform.position, hit.transform.position))
+            { // Do nothing and continue the loop
+            }
+                
+            // Once the target is determined to be a valid target, mark it and break the loop
+            else
+            {
+                target = hit;
+                break;
+            }
+        }
+
+        // Once a target is determined, cast for all tokens between the player and the target
+        RaycastHit2D[] tokenHits = Physics2D.CircleCastAll(transform.position, 0.35f, pointTo, Vector3.Distance(transform.position, toVector3(target.point)), tokenMask);
         
+        // for each token detected, determine how much time until the player reaches the token, then trigger the collection routine
+        foreach (RaycastHit2D token in tokenHits)
+        {
+            token.collider.GetComponent<Coin>().resizeWhenTimer = (Vector3.Distance(transform.position, token.transform.position) / Vector3.Distance(transform.position, target.transform.position)) * moveDuration;
+            token.collider.GetComponent<Coin>().StartCoroutine("Collect");
+        }
+
+        try { lastPushTile.enabled = true; } catch { } // Renable the collider of the last push tile contacted.
         
         
         // If the target is a push tile, disable the tile's collider. This prevents the player from getting stuck on it.
@@ -99,16 +129,6 @@ public class PlayerController : MonoBehaviour
             lastPushTile = target.collider;
             lastPushTile.enabled = false;
         }
-
-        // If the target is a OneWay wall, check if the player is on the correct side of the wall
-        // Check this by seeing if the side of the tile with the collider is farther away than the tile's center. If it is, disable the collider and redo the circlecast
-        if (target.collider.CompareTag("OneWay") && Vector3.Distance(transform.position, toVector3(target.point)) > Vector3.Distance(transform.position, target.transform.position)) 
-        {
-            Collider2D oneWayCollider = target.collider;
-            oneWayCollider.enabled = false;
-            target = Physics2D.CircleCast(transform.position, 0.35f, pointTo, castRange, wallMask); // Fire the circlecast to detect a wall
-            oneWayCollider.enabled = true;
-        }
         
         // If the raycast hit a wall next to the player, return void
         else if (
@@ -116,9 +136,9 @@ public class PlayerController : MonoBehaviour
             target.point.y < transform.position.y + 1 && target.point.y > transform.position.y - 1 )
         { moving = false; return; }
         
-        targetHit = target; // Record the raycast hit for the Gizmos
         originTransform = transform.position; // log the player's starting position as it moves
 
+        // Rotate the player to face the direction of motion
         if (pointTo.y != 0) { transform.eulerAngles = new Vector3(0, 0, Mathf.Asin(pointTo.y) * Mathf.Rad2Deg - 90); }
         else if (pointTo.x != 0) { transform.eulerAngles = new Vector3(0, 0, Mathf.Acos(pointTo.x) * Mathf.Rad2Deg - 90); }
         else { Debug.LogError("ERROR: Invalid target for rotation. Vector: (" + pointTo.x + ", " + pointTo.y + ")"); }
@@ -132,8 +152,8 @@ public class PlayerController : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Gizmos.DrawWireSphere(targetHit.point, 0.35f);
-        Gizmos.DrawLine(transform.position, targetHit.point);
+        Gizmos.DrawWireSphere(target.point, 0.35f);
+        Gizmos.DrawLine(transform.position, target.point);
     }
 
     IEnumerator CameraShake()
