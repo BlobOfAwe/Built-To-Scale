@@ -77,12 +77,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -250392269, guid: cff9899ff367bc2459acebcce90243e7, type: 3}
+  m_Sprite: {fileID: -4052187856178806547, guid: e5e5fc7b85a7193408dc76be9566246f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.75, y: 0.5625}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -113,7 +113,12 @@ MonoBehaviour:
     m_Bits: 64
   timer: 0
   CameraShakeTime: 0
-  MaxCameraTime: 0
+  CameraShakeCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!95 &2511610585744767937
 Animator:
   serializedVersion: 5
