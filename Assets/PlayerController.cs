@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -22,7 +23,7 @@ public class PlayerController : MonoBehaviour
     private Collider2D lastPushTile;
     private Animator animator;
     public float CameraShakeTime;
-    public float MaxCameraTime;
+    public AnimationCurve CameraShakeCurve;
 
     // Start is called before the first frame update
     void Start()
@@ -66,9 +67,10 @@ public class PlayerController : MonoBehaviour
 
             moving = false;
             transform.eulerAngles = Vector3.zero;
+            StartCoroutine(CameraShake());
             
             // If the currently registered target is a pushtile, force the player to move
-            if (target.collider.CompareTag("PushTile"))
+            if (target.collider.CompareTag("PushTile"))         
             {
                 Move(lastPushTile.transform.right.x, lastPushTile.transform.right.y);
             }
@@ -171,21 +173,15 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator CameraShake()
     {
-        Vector3 OrginalCamPos = Camera.main.transform.position;
-        yield return new WaitForSeconds(0.5f);
-        while (CameraShakeTime > 0)
+        Vector3 OrginalCamPos = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y, -10);
+        float TimeUsed = 0f;
+        while (TimeUsed < CameraShakeTime)
         {
-            Camera.main.transform.position = new Vector3(Random.Range(1, 5), Random.Range(1, 5), -10);
+            TimeUsed += Time.deltaTime;
+            float shakeStrength = CameraShakeCurve.Evaluate(TimeUsed / CameraShakeTime);
+            Camera.main.transform.position = OrginalCamPos + new Vector3(Random.insideUnitSphere.x, Random.insideUnitSphere.y) * shakeStrength;
+            yield return null;
         }
+        Camera.main.transform.position = OrginalCamPos;
     }
-   
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if(collision.transform.tag == "Wall")
-        {
-            StartCoroutine(CameraShake());
-            CameraShakeTime -= Time.deltaTime;
-        }
-    }
-
 }
