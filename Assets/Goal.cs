@@ -4,38 +4,35 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class Goal : MonoBehaviour
 {
-    public bool EndBig;
-    public bool EndSmall;
-    public Vector3 BigScale; // set this to the scale that the player will transform to when hitting the big coins
-    public Vector3 SmallScale; // set this to the scale that the player will transform to when hitting the small coins
-    // make sure this obj has a collider that is trigger & has a collider with frzen constraints
-    void Start()
+    public int requiredSize = 0;
+    [SerializeField] AudioClip levelComplete;
+    private AudioSource musicManager;
+
+    private void Start()
     {
-        
+        musicManager = GameObject.Find("MusicManager").GetComponent<AudioSource>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void GoalCheck(int size)
     {
-        
-    }
-
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if(collision.transform.tag == "Player")
+        if (size == requiredSize)
         {
-            if (EndBig && collision.transform.lossyScale == BigScale)
-            {
-                Debug.Log("Won Big");
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-            }
-
-            if (EndSmall && collision.transform.lossyScale == SmallScale)
-            {
-                Debug.Log("Won Small");
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-            }
+            StartCoroutine("FinishLevel");
         }
+    }
+
+    private IEnumerator FinishLevel()
+    {
+        gameObject.GetComponent<Collider2D>().enabled = true;
+        musicManager.Pause();
+        musicManager.loop = false;
+        musicManager.clip = levelComplete;
+        musicManager.Play();
+
+        while (musicManager.isPlaying) { yield return null; }
+
+        Destroy(musicManager.gameObject);
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
