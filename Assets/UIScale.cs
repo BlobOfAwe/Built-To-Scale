@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class UIScale : MonoBehaviour
 {
-    [SerializeField] float[] needleAngles = new float[5]; // What angle should the needle be at for each player size
+    [SerializeField] float[] needlePos = new float[5]; // What angle should the needle be at for each player size
     [SerializeField] float fadeAlpha = 0.5f; // How transparent does the UI become when the player is overlapping it
     private RectTransform rectTransform; // The RectTransform component of the Needle
     private RectTransform scaleTransform; // The RectTransform component of the Scale
@@ -61,6 +61,6 @@ public class UIScale : MonoBehaviour
     }
     public void SetAngle(int playerSize)
     {
-        rectTransform.eulerAngles = new Vector3(0, 0, needleAngles[playerSize + 2]);
+        rectTransform.anchoredPosition = new Vector2(needlePos[playerSize + 2], 0);
     }
 }

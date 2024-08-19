@@ -33,11 +33,11 @@ RectTransform:
   - {fileID: 2147196749314105048}
   m_Father: {fileID: 1753263988070585587}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.032427408, y: 0.7156996}
-  m_AnchorMax: {x: 0.16935687, y: 0.9567624}
-  m_AnchoredPosition: {x: -0.5, y: 0}
-  m_SizeDelta: {x: -1, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0.0475, y: 0.06888272}
+  m_AnchorMax: {x: 0.37875003, y: 0.25755864}
+  m_AnchoredPosition: {x: -4, y: 0}
+  m_SizeDelta: {x: 4.9706116, y: 0.89969635}
+  m_Pivot: {x: 0, y: 0}
 --- !u!222 &2232790632591524626
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -66,7 +66,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5db161e7332a83f4182a6cfa28af66a9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ed2d2578ca35a3f439ee4dbbbd0a1563, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -102,18 +102,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2910464301018772817}
-  m_LocalRotation: {x: 0, y: -0, z: 0.37136796, w: -0.9284858}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7589203209453015880}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 316.4}
-  m_AnchorMin: {x: 0.0976392, y: 0.08800001}
-  m_AnchorMax: {x: 0.9188522, y: 0.91200006}
-  m_AnchoredPosition: {x: -1, y: 0.46465302}
-  m_SizeDelta: {x: 0, y: -1}
-  m_Pivot: {x: 0.5058818, y: 0.53528357}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 36.4122, y: 45.5153}
+  m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &4147614977641821381
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -142,7 +142,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 355a636007aaea1408f934f79e2415f3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1167e3a7639041c41a5e0c1964341978, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -164,12 +164,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f48f85b097e42d478d9fd98378173c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  needleAngles:
-  - 316
-  - 240
-  - 180
-  - 117
-  - 40
+  needlePos:
+  - -90
+  - -45
+  - 0
+  - 45
+  - 90
   fadeAlpha: 0.2
   playerScreenPoint: {x: 0, y: 0, z: 0}
   scaleAnchorPoints:
@@ -249,7 +249,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
