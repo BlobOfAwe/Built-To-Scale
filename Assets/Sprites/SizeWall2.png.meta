@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 6768623fbaa029b459be04d628bb8bb6
+guid: 8017357ddd27ee040ab5ba1ec4221c35
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,7 +97,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SizeWall_0
+      name: SizeWall2_0
       rect:
         serializedVersion: 2
         x: 0
@@ -111,35 +111,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 51c059dd8cb481e4283b1d89370187f4
-      internalID: 1684451112
+      spriteID: 70eea716f56bd144d9769ca7b8df3bde
+      internalID: 823235870
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SizeWall_1
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cbae67d2d62e51145ac6cf09a036d565
-      internalID: 1991167394
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SizeWall_2
+      name: SizeWall2_1
       rect:
         serializedVersion: 2
         x: 0
@@ -153,29 +132,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2ffb6624e3a6fcb4da65eb37512658b2
-      internalID: -463425504
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SizeWall_3
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2d72bf9f35d8a9c44bbe57d4f465f854
-      internalID: 54048402
+      spriteID: 65d2bb817e030994b8ff79ecddfa95f4
+      internalID: 687916619
       vertices: []
       indices: 
       edges: []
@@ -191,10 +149,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      SizeWall_0: 1684451112
-      SizeWall_1: 1991167394
-      SizeWall_2: -463425504
-      SizeWall_3: 54048402
+      SizeWall2_0: 823235870
+      SizeWall2_1: 687916619
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

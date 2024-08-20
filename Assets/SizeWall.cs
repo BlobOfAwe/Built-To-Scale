@@ -5,10 +5,14 @@ using UnityEngine;
 public class SizeWall : MonoBehaviour
 {
     public int requiredSize = 0;
-    [SerializeField] Sprite[] passable = new Sprite[5];
-    [SerializeField] Sprite[] impassable = new Sprite[5];
+    [SerializeField] Sprite passable;
+    [SerializeField] Sprite impassable;
+    [SerializeField] Sprite[] active = new Sprite[5];
+    [SerializeField] Sprite[] inactive = new Sprite[5];
+
     private PlayerController player;
     private SpriteRenderer spriteRender;
+    [SerializeField] SpriteRenderer numberRenderer;
     private Collider2D collider;
 
     private void Start()
@@ -18,26 +22,18 @@ public class SizeWall : MonoBehaviour
         spriteRender = GetComponent<SpriteRenderer>();
     }
 
-    public void SizeWallCheck(int size)
-    {
-        if (size == requiredSize)
-        {
-            StartCoroutine("FinishLevel");
-        }
-    }
-
     private void Update()
     {
         if (player.size == requiredSize) 
         { 
-            //spriteRender.sprite = passable[requiredSize + 2]; 
+            spriteRender.sprite = passable;
+            numberRenderer.sprite = active[requiredSize + 2];
             collider.enabled = false;
-            spriteRender.color = Color.green;
         }
         else 
         {
-            //spriteRender.sprite = impassable[requiredSize + 2]; 
-            spriteRender.color = Color.red;
+            spriteRender.sprite = impassable;
+            numberRenderer.sprite = inactive[requiredSize + 2];
             collider.enabled = true; 
         }
     }
