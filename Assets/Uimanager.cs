@@ -39,7 +39,9 @@ public class Uimanager : MonoBehaviour
        
         if (level > 0) 
         {
-            GameObject PausemenuInstance = Instantiate(PauseMenu);
+            GameObject PausemenuInstance = GameObject.Find("PauseMenu");
+
+            PausemenuInstance.SetActive(false);
     
             globalPauseMenuinstance = PausemenuInstance;
           

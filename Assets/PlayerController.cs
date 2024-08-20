@@ -132,7 +132,9 @@ public class PlayerController : MonoBehaviour
         // for each token detected, determine how much time until the player reaches the token, then trigger the collection routine
         foreach (RaycastHit2D token in tokenHits)
         {
-            token.collider.GetComponent<Coin>().resizeWhenTimer = (Vector3.Distance(transform.position, token.transform.position) / Vector3.Distance(transform.position, target.transform.position)) * moveDuration;
+            float tokenDistance = Vector3.Distance(transform.position, token.transform.position);
+            float targetDistance = Vector3.Distance(transform.position, targetPosition);
+            token.collider.GetComponent<Coin>().resizeWhenTimer = (tokenDistance / targetDistance) * moveDuration;
             token.collider.GetComponent<Coin>().StartCoroutine("Collect");
         }
 
