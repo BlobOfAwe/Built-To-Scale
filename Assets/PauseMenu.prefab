@@ -404,11 +404,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3132806046465456962, guid: 58816a5af2bf66d42a7198b356f01bdc, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 160
+      value: 185.7699
       objectReference: {fileID: 0}
     - target: {fileID: 3132806046465456962, guid: 58816a5af2bf66d42a7198b356f01bdc, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 30
+      value: 71.5833
       objectReference: {fileID: 0}
     - target: {fileID: 3132806046465456962, guid: 58816a5af2bf66d42a7198b356f01bdc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -440,11 +440,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3132806046465456962, guid: 58816a5af2bf66d42a7198b356f01bdc, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: -0.000002861023
       objectReference: {fileID: 0}
     - target: {fileID: 3132806046465456962, guid: 58816a5af2bf66d42a7198b356f01bdc, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -60.25
+      value: -64.75
       objectReference: {fileID: 0}
     - target: {fileID: 3132806046465456962, guid: 58816a5af2bf66d42a7198b356f01bdc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -458,6 +458,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3864796657894692834, guid: 58816a5af2bf66d42a7198b356f01bdc, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3864796657894692834, guid: 58816a5af2bf66d42a7198b356f01bdc, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d795bfa9718ab3142b0545d624f82365, type: 3}
     - target: {fileID: 9065753373014815079, guid: 58816a5af2bf66d42a7198b356f01bdc, type: 3}
       propertyPath: m_Name
       value: RestartButton Variant
@@ -467,7 +475,8 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 1571659348196579170, guid: 58816a5af2bf66d42a7198b356f01bdc, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58816a5af2bf66d42a7198b356f01bdc, type: 3}
