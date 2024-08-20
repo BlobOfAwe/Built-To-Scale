@@ -10,6 +10,17 @@ public class DontDestroy : MonoBehaviour
 
         if (objs.Length > 1)
         {
+            if (gameObject.CompareTag("Music"))
+            {
+                foreach (var obj in objs)
+                {
+                    if (obj != this.gameObject && obj.GetComponent<AudioSource>().clip != GetComponent<AudioSource>().clip)
+                    {
+                        obj.GetComponent<AudioSource>().clip = GetComponent<AudioSource>().clip;
+                        obj.GetComponent<AudioSource>().Play();
+                    }
+                }
+            }
             Destroy(this.gameObject);
         }
 

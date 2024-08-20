@@ -75,8 +75,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: 01ae6a3e565c46f429dd48be31fbaad8, type: 3}
-  m_Color: {r: 1, g: 0.6018067, b: 0, a: 1}
+  m_Sprite: {fileID: -1611628099, guid: ff3d0fa65fc117c419316d3d3ec4610f, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -99,7 +99,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   requiredSize: 0
-  levelComplete: {fileID: 8300000, guid: df553d9263e998a48a8d347edf126322, type: 3}
+  activeGoal:
+  - {fileID: 2016360973, guid: ff3d0fa65fc117c419316d3d3ec4610f, type: 3}
+  - {fileID: 1565567871, guid: ff3d0fa65fc117c419316d3d3ec4610f, type: 3}
+  - {fileID: -349806759, guid: ff3d0fa65fc117c419316d3d3ec4610f, type: 3}
+  - {fileID: 2084912525, guid: ff3d0fa65fc117c419316d3d3ec4610f, type: 3}
+  - {fileID: -432415595, guid: ff3d0fa65fc117c419316d3d3ec4610f, type: 3}
+  inactiveGoal:
+  - {fileID: -1611628099, guid: ff3d0fa65fc117c419316d3d3ec4610f, type: 3}
+  - {fileID: 364438497, guid: ff3d0fa65fc117c419316d3d3ec4610f, type: 3}
+  - {fileID: -1963248190, guid: ff3d0fa65fc117c419316d3d3ec4610f, type: 3}
+  - {fileID: -1318920342, guid: ff3d0fa65fc117c419316d3d3ec4610f, type: 3}
+  - {fileID: 823931278, guid: ff3d0fa65fc117c419316d3d3ec4610f, type: 3}
+  levelComplete: {fileID: 8300000, guid: 72ebcb40243be9e458e862a377de6c6a, type: 3}
 --- !u!61 &9152007908248401463
 BoxCollider2D:
   m_ObjectHideFlags: 0
